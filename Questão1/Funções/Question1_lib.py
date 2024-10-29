@@ -70,5 +70,20 @@ def bit2bitAnd(strIpBin:str,strIpMascaraBin:str):
     #Ip de Saída
     IpBinario = list(map(lambda x,i: i if x == i else i  ,strIpBin,strIpMascaraBin))
     IpBinario = "".join(IpBinario)
-
+    
     return IpBinario
+
+def bin2ip(bin:str):
+    bin = bin.split('.')
+    bin = list(str(int(x,2)) for x in bin)
+    bin = ".".join(bin)
+    return bin
+
+def NetworkAdress(ip:str,Mask:str):
+    Network = list(map(lambda x,i: x if x == i else '0'  ,ip,Mask))
+    Network = "".join(Network)
+    return Network
+
+def FirstHost(Net:str):
+    Net = Net.replace(Net[len(Net), '1'])
+    return Net

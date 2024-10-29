@@ -23,16 +23,27 @@ import tabulate
 #MaskI = int(input('Digite sua máscara de rede(0.0.0.0): '))
 #MaskF = input('Digite sua máscara de rede final(0.0.0.0):')
 
-AddressIpBin = '245.130.100.5'
-MaskI = 10
-MaskF = 20
+AddressIp = '10.1.0.0'
+MaskI = 8
+MaskF = 10
 
-AddressIpBin = Question1_lib.ip2bin(AddressIp)
+Ips = []
 
-MaskIp = Question1_lib.cidr2mascara(MaskI)
+for i in range(MaskI,MaskF + 1):
+    cidr = i
+    AddressIpBin = Question1_lib.ip2bin(AddressIp)
 
-Ipsaida = Question1_lib.bit2bitAnd(AddressIpBin[1],MaskIp[2])
-print(Ipsaida)
+    MaskIp = Question1_lib.cidr2mascara(cidr)
+
+    Ipsaida = Question1_lib.bit2bitAnd(AddressIpBin[1],MaskIp[2])
+
+    SubMask = Question1_lib.bin2ip(Ipsaida)
+    
+    NetworkAdress = Question1_lib.NetworkAdress(AddressIpBin[1],Ipsaida)
+
+    FirstHost = Question1_lib.FirstHost(NetworkAdress[0])
+    print(FirstHost)
+    Ips.append([cidr, NetworkAdress])
 
 
 
