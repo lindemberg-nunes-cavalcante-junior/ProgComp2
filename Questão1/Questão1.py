@@ -19,12 +19,20 @@ d) Formate as saídas de forma clara e organizada (se quiser pode usar a bibliot
 from Funções import Question1_lib
 import tabulate
 
-AddressIp = input('Digite seu Endereço de Ip(0.0.0.0): ')
-#MaskI = input('Digite sua máscara de rede(0.0.0.0): ')
+#AddressIp = input('Digite seu Endereço de Ip(0.0.0.0): ')
+#MaskI = int(input('Digite sua máscara de rede(0.0.0.0): '))
 #MaskF = input('Digite sua máscara de rede final(0.0.0.0):')
+
+AddressIpBin = '245.130.100.5'
+MaskI = 10
+MaskF = 20
 
 AddressIpBin = Question1_lib.ip2bin(AddressIp)
 
+MaskIp = Question1_lib.cidr2mascara(MaskI)
+
+Ipsaida = Question1_lib.bit2bitAnd(AddressIpBin[1],MaskIp[2])
+print(Ipsaida)
 
 
 
