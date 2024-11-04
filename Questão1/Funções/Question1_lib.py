@@ -68,7 +68,7 @@ def bit2bitAnd(strIpBin:str,strIpMascaraBin:str):
                 raise Exception('Octeto(s) errado...')
     
     #Ip de Saída
-    IpBinario = list(map(lambda x,i: i if x == i else i  ,strIpBin,strIpMascaraBin))
+    IpBinario = list(map(lambda x,i: i if x == i else '0'  ,strIpBin,strIpMascaraBin))
     IpBinario = "".join(IpBinario)
     
     return IpBinario
@@ -84,6 +84,16 @@ def NetworkAdress(ip:str,Mask:str):
     Network = "".join(Network)
     return Network
 
-def FirstHost(Net:str):
-    Net = Net.replace(Net[len(Net), '1'])
-    return Net
+def Hosts(Rede:str,Masc:str,Bits:int):
+    Fhost = Rede[:-1]
+    Fhost = Fhost + '1'
+    Broadcast = list(map(lambda x,i:'1' if x==i=='0' else x,Rede,Masc))
+    Broadcast = "".join(Broadcast)
+    Lhost = Broadcast[:-1]
+    Lhost = Lhost + '0'
+    Hosts = 2**(32 -Bits) - 2
+
+    Fhost = bin2ip(Fhost)
+    Broadcast = bin2ip(Broadcast)
+    Lhost = bin2ip(Lhost)
+    return Fhost,Broadcast,Lhost, Hosts

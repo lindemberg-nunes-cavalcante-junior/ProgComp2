@@ -17,15 +17,11 @@ existentes;
 d) Formate as saídas de forma clara e organizada (se quiser pode usar a biblioteca tabulate). 
 '''
 from Funções import Question1_lib
-import tabulate
+from tabulate import tabulate
+AddressIp = input('Digite seu Endereço de Ip(0.0.0.0): ')
+MaskI = int(input('Digite sua máscara de rede: '))
+MaskF = int(input('Digite sua máscara de rede final:'))
 
-#AddressIp = input('Digite seu Endereço de Ip(0.0.0.0): ')
-#MaskI = int(input('Digite sua máscara de rede(0.0.0.0): '))
-#MaskF = input('Digite sua máscara de rede final(0.0.0.0):')
-
-AddressIp = '10.1.0.0'
-MaskI = 8
-MaskF = 10
 
 Ips = []
 
@@ -36,14 +32,14 @@ for i in range(MaskI,MaskF + 1):
     MaskIp = Question1_lib.cidr2mascara(cidr)
 
     Ipsaida = Question1_lib.bit2bitAnd(AddressIpBin[1],MaskIp[2])
-
-    SubMask = Question1_lib.bin2ip(Ipsaida)
     
     NetworkAdress = Question1_lib.NetworkAdress(AddressIpBin[1],Ipsaida)
+    
+    Hosts = Question1_lib.Hosts(NetworkAdress, MaskIp[2],i)
+    
+    Ips.append(["/"+str(cidr), NetworkAdress,Hosts[0],Hosts[2],Hosts[1],MaskIp[1],MaskIp[2]])
 
-    FirstHost = Question1_lib.FirstHost(NetworkAdress[0])
-    print(FirstHost)
-    Ips.append([cidr, NetworkAdress])
+print(tabulate(Ips,headers=["CIDR","Network Address","Primeiro Host","Ultimo Host","Broadcast Adress","Subnet Mask","Subnet Mask (Binary)"]))
 
 
 
