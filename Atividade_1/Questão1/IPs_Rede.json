@@ -1,0 +1,132 @@
+[
+      {
+            "CIDR": "/8",
+            "Endereço de Rede": "01111000.00000000.00000000.00000000",
+            "Primeiro Host": "120.0.0.1",
+            "Ultimo Host": "120.255.255.254",
+            "Endereço Broadcast": "120.255.255.255",
+            "Mascara da Sub-Rede": "255.0.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.00000000.00000000.00000000",
+            "Hosts Validos": 16777214
+      },
+      {
+            "CIDR": "/9",
+            "Endereço de Rede": "01111000.00000000.00000000.00000000",
+            "Primeiro Host": "120.0.0.1",
+            "Ultimo Host": "120.127.255.254",
+            "Endereço Broadcast": "120.127.255.255",
+            "Mascara da Sub-Rede": "255.128.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.10000000.00000000.00000000",
+            "Hosts Validos": 8388606
+      },
+      {
+            "CIDR": "/10",
+            "Endereço de Rede": "01111000.00000000.00000000.00000000",
+            "Primeiro Host": "120.0.0.1",
+            "Ultimo Host": "120.63.255.254",
+            "Endereço Broadcast": "120.63.255.255",
+            "Mascara da Sub-Rede": "255.192.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11000000.00000000.00000000",
+            "Hosts Validos": 4194302
+      },
+      {
+            "CIDR": "/11",
+            "Endereço de Rede": "01111000.00000000.00000000.00000000",
+            "Primeiro Host": "120.0.0.1",
+            "Ultimo Host": "120.31.255.254",
+            "Endereço Broadcast": "120.31.255.255",
+            "Mascara da Sub-Rede": "255.224.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11100000.00000000.00000000",
+            "Hosts Validos": 2097150
+      },
+      {
+            "CIDR": "/12",
+            "Endereço de Rede": "01111000.00010000.00000000.00000000",
+            "Primeiro Host": "120.16.0.1",
+            "Ultimo Host": "120.31.255.254",
+            "Endereço Broadcast": "120.31.255.255",
+            "Mascara da Sub-Rede": "255.240.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11110000.00000000.00000000",
+            "Hosts Validos": 1048574
+      },
+      {
+            "CIDR": "/13",
+            "Endereço de Rede": "01111000.00011000.00000000.00000000",
+            "Primeiro Host": "120.24.0.1",
+            "Ultimo Host": "120.31.255.254",
+            "Endereço Broadcast": "120.31.255.255",
+            "Mascara da Sub-Rede": "255.248.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111000.00000000.00000000",
+            "Hosts Validos": 524286
+      },
+      {
+            "CIDR": "/14",
+            "Endereço de Rede": "01111000.00011100.00000000.00000000",
+            "Primeiro Host": "120.28.0.1",
+            "Ultimo Host": "120.31.255.254",
+            "Endereço Broadcast": "120.31.255.255",
+            "Mascara da Sub-Rede": "255.252.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111100.00000000.00000000",
+            "Hosts Validos": 262142
+      },
+      {
+            "CIDR": "/15",
+            "Endereço de Rede": "01111000.00011110.00000000.00000000",
+            "Primeiro Host": "120.30.0.1",
+            "Ultimo Host": "120.31.255.254",
+            "Endereço Broadcast": "120.31.255.255",
+            "Mascara da Sub-Rede": "255.254.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111110.00000000.00000000",
+            "Hosts Validos": 131070
+      },
+      {
+            "CIDR": "/16",
+            "Endereço de Rede": "01111000.00011110.00000000.00000000",
+            "Primeiro Host": "120.30.0.1",
+            "Ultimo Host": "120.30.255.254",
+            "Endereço Broadcast": "120.30.255.255",
+            "Mascara da Sub-Rede": "255.255.0.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111111.00000000.00000000",
+            "Hosts Validos": 65534
+      },
+      {
+            "CIDR": "/17",
+            "Endereço de Rede": "01111000.00011110.00000000.00000000",
+            "Primeiro Host": "120.30.0.1",
+            "Ultimo Host": "120.30.127.254",
+            "Endereço Broadcast": "120.30.127.255",
+            "Mascara da Sub-Rede": "255.255.128.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111111.10000000.00000000",
+            "Hosts Validos": 32766
+      },
+      {
+            "CIDR": "/18",
+            "Endereço de Rede": "01111000.00011110.00000000.00000000",
+            "Primeiro Host": "120.30.0.1",
+            "Ultimo Host": "120.30.63.254",
+            "Endereço Broadcast": "120.30.63.255",
+            "Mascara da Sub-Rede": "255.255.192.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111111.11000000.00000000",
+            "Hosts Validos": 16382
+      },
+      {
+            "CIDR": "/19",
+            "Endereço de Rede": "01111000.00011110.00100000.00000000",
+            "Primeiro Host": "120.30.32.1",
+            "Ultimo Host": "120.30.63.254",
+            "Endereço Broadcast": "120.30.63.255",
+            "Mascara da Sub-Rede": "255.255.224.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111111.11100000.00000000",
+            "Hosts Validos": 8190
+      },
+      {
+            "CIDR": "/20",
+            "Endereço de Rede": "01111000.00011110.00100000.00000000",
+            "Primeiro Host": "120.30.32.1",
+            "Ultimo Host": "120.30.47.254",
+            "Endereço Broadcast": "120.30.47.255",
+            "Mascara da Sub-Rede": "255.255.240.0",
+            "Mascara da Sub-Rede (Binario)": "11111111.11111111.11110000.00000000",
+            "Hosts Validos": 4094
+      }
+]

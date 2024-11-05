@@ -2,11 +2,15 @@ def ip2bin(ipdecimal:str):
     ipdecimal = ipdecimal.split('.')
 
     # Validação
+    if not isinstance(ipdecimal,str):
+        raise ValueError
     if len(ipdecimal) != 4:
         raise Exception('Não possui 4 Octetos ou separação incorreta...')
     for i in ipdecimal:
         if i.isdigit() == False or int(i) < 0 or int(i) > 255:
             raise Exception('Range de tamanho Errado ou Formatação Errada...')
+    if not isinstance(ipdecimal,str):
+        raise ValueError
     # Conversão
     ipbinario = list(str(bin(int(x))[2:]) if len(str(bin(int(x))[2:]))==8 else ((8 - len(str(bin(int(x))[2:]))) *'0') + str(bin(int(x))[2:]) for x in ipdecimal)
     ipdecimal = ".".join(ipdecimal)
@@ -17,8 +21,10 @@ def ip2bin(ipdecimal:str):
 def cidr2mascara(cidrMascara:int):
 
     # Validação
-    if  cidrMascara <0 or cidrMascara > 32:
-        raise Exception('A máscara dada não é um inteiro ou não está de acordo com o range de 0 à 32...')
+    if not isinstance(cidr2mascara,int):
+        raise Exception('Informe um valor inteiro...')
+    elif  cidrMascara <0 or cidrMascara > 32:
+        raise Exception('A máscara dada não é um positivo ou não está de acordo com o range de 0 a 32...')
 
     #Gerar Máscara em Binário
     strMascaraBin = list()
@@ -52,6 +58,8 @@ def cidr2mascara(cidrMascara:int):
 def bit2bitAnd(strIpBin:str,strIpMascaraBin:str):
 
     #Validar
+    if not isinstance(strIpBin, str) or not isinstance(strIpMascaraBin, str):
+        raise ValueError
     if len(strIpBin.split('.')) != 4 or len(strIpMascaraBin.split('.')) != 4:
         raise Exception('Mascara ou Ip não possui 4 octetos...')
     for i in strIpBin.split('.'):
