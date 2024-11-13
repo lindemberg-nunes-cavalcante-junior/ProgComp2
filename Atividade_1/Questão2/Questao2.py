@@ -3,10 +3,7 @@ from Funcoes import Questao2_mine_lib
 
 BytesEntrada = (('Esse é fácil',8))
 
-for i in BytesEntrada:
-    strHash = i[0]
-    intBitsZero = i[1]
-    nonceFind,tempoFind = Questao2_mine_lib.FindNonce(strHash,intBitsZero)
+nonceFind,tempoFind = Questao2_mine_lib.FindNonce(BytesEntrada[0],BytesEntrada[1])
 
 
 '''
