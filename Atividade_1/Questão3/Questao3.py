@@ -1,0 +1,40 @@
+from Questao3_lib import *
+from termcolor import colored
+import random
+
+Palavras = leituraArquivo()
+print(Palavras)
+Sorteio = random.choice(Palavras).upper()
+tentativas = 1
+print(f'A palavra tem {len(Sorteio)} letras e você possui 6 tentativas para advinhar')
+
+#Jogo
+while True:
+    #A tentativa do usuario
+    while True:
+        tentativa = input('Sua tentativa: ').upper()
+        if len(tentativa) < len(Sorteio) or len(tentativa) > len(Sorteio): 
+            print('Coloque a palavra da maneira certa...')
+        for i in tentativa:
+             if i.isdigit(): print('Apenas letras, nenhum número será aceito...')
+        else: break
+    
+# --------------------------------------------------------------
+# Verificação das letras.
+    for i,x in zip(Sorteio,tentativa):
+        if i == x:
+            print(colored(f'{i}','green',attrs=['blink']),end='')
+        elif i != x and Sorteio[Sorteio.find(x)] == x:
+            print(colored(f'{x}','yellow',attrs=['blink']),end='')
+        else:
+            print(colored(f'{x}','grey',attrs=['blink']),end='')
+    print()
+# --------------------------------------------------------------
+# Contador
+    if tentativas == 6:
+        print(f"A palavra era {Sorteio}, você perdeu.")
+        break
+    elif tentativa == Sorteio:
+        print(f'Parabens, você acertou a palavra em {tentativas} tentativas!!')
+        break
+    tentativas += 1
