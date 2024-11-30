@@ -23,11 +23,11 @@ while True:
 # Verificação das letras.
     for i,x in zip(Sorteio,tentativa):
         if i == x:
-            print(colored(f'{i}','green',attrs=['blink']),end='')
+            print(bcolor.verde + f'{i}',end='')
         elif i != x and Sorteio[Sorteio.find(x)] == x:
-            print(colored(f'{x}','yellow',attrs=['blink']),end='')
+            print(bcolor.amarelo+f'{x}',end='')
         else:
-            print(colored(f'{x}','grey',attrs=['blink']),end='')
+            print(bcolor.cinza+f'{x}',end='')
     print()
 # --------------------------------------------------------------
 # Contador
