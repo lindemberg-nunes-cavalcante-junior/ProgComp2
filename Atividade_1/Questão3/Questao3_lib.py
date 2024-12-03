@@ -1,10 +1,5 @@
 import os,sys
 
-class bcolor:
-    verde = '\033[92m'
-    amarelo = '\033[93m'
-    cinza = '\033[90m'
-
 def leituraArquivo():
     try:
         dirname = os.path.dirname(os.path.abspath(__file__))
