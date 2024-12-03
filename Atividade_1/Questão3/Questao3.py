@@ -1,5 +1,4 @@
 from Questao3_lib import *
-from termcolor import colored
 import random
 
 Palavras = leituraArquivo()
