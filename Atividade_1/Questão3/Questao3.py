@@ -2,7 +2,6 @@ from Questao3_lib import *
 import random
 
 Palavras = leituraArquivo()
-print(Palavras)
 Sorteio = random.choice(Palavras).upper()
 tentativas = 1
 print(f'A palavra tem {len(Sorteio)} letras e você possui 6 tentativas para advinhar')
@@ -22,11 +21,11 @@ while True:
 # Verificação das letras.
     for i,x in zip(Sorteio,tentativa):
         if i == x:
-            print(bcolor.verde + f'{i}',end='')
+            print(bcolor.verde + f'{i}' +'\033[0m',end='')
         elif i != x and Sorteio[Sorteio.find(x)] == x:
-            print(bcolor.amarelo+f'{x}',end='')
+            print(bcolor.amarelo+f'{x}'+'\033[0m',end='')
         else:
-            print(bcolor.cinza+f'{x}',end='')
+            print(bcolor.cinza+f'{x}'+'\033[0m',end='')
     print()
 # --------------------------------------------------------------
 # Contador
