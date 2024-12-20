@@ -1,5 +1,5 @@
-80;
-7;
-20;
-68;
-22;
+porta;protocolo;descrição
+22;TCP,UDP;SSH (Secure Shell - Shell seguro) - Usada para logins seguros, transferência de arquivos e redirecionamento de porta
+23;TCP,UDP;Telnet protocol - Comunicação de texto sem encriptação
+25;TCP,UDP;	SMTP (Simple Mail Transfer Protocol - Protocolo simples de envio de e-mail) - usada para roteamento de e-mail entre servidores (Atualmente é utilizada a porta 587,conforme Comitê Gestor da Internet no Brasil CGI.br
+80;TCP;	HTTP (HyperText Transfer Protocol - Procolo de transferência de HiperTexto) - usada para transferir páginas WWW

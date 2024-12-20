@@ -1,9 +1,9 @@
-import socket,sys,requests,os
+import socket,sys,os,json
 
 dir = os.path.dirname(os.path.abspath(__file__))
 try:
     arqentrada = open(dir + '\\Teste_de_Portas.txt','r')
-    # lista = list(i[:-1].split(';')[0] if i[-1:] == '\n' else i.split(';')[0] for i in arqentrada)
+    arqentrada.readline()
 except:
     print(f'{sys.exc_info()[0]}')
 
@@ -15,19 +15,31 @@ try:
 except:
     print('Não foi possível encontrar a url...')
 
+# Teste das portas
 Status = list()
-porta = 80
 while True:
-    server_conn = (ip_host,porta)
+    porta = arqentrada.readline()
+    if porta[-1:] == '\n': porta = porta[:-1]
+    elif porta == '':
+        arqentrada.close()
+        socket_teste.close()
+        break
+    porta = porta.split(';')
+    
+    server_conn = (ip_host,int(porta[0]))
+
     try:
+        print(f'Testando....{ip_host} - {porta[0]}')
         socket_teste = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        print(socket_teste.type)
         socket_teste.settimeout(2)
         socket_teste.connect(server_conn)
     except:
-        Status.append({porta:{'porta':porta,'protocolo':socket.getservbyport(porta),'status':socket.error}})
-        print(Status)
-        break
+        Status.append({int(porta[0]):{'porta':int(porta[0]),'protocolo':porta[1] + '-' + porta[2],'status':socket.error}})
     else:
-        Status.append({porta:{'porta':porta,'protocolo':socket.getservbyport(porta),'status':'OK'}})
-        break
+        Status.append({int(porta[0]):{'porta':int(porta[0]),'protocolo':porta[1] + '-' + porta[2],'status':'OK'}})
+
+
+arqsaida = open(dir + '\\Teste_de_Portas.json','w')
+json.dump(Status,arqsaida)
+    
+
